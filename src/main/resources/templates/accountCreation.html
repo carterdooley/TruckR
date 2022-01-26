@@ -11,17 +11,17 @@
     <nav>
     </nav>
     <div id="accCreate">
-        <form action="#" th:action="@{/users}" th:object="${newUser}" method="post">
+        <form action="#" th:action="@{/accountCreation}" th:object="${newUser}" method="post">
             Username:  
             <input id="userName" type="text" th:field="*{username}">
             <br> <br>  
             Password: 
-            <input id="passWord" type="text" th:field="*{password}">
+            <input id="passWord" type="password" th:field="*{password}">
             <br><br>
             <h5>Please select driver, employer, or both</h5>
-            <input type="radio" id="driver" name="Driver" value="driver" th:field="*{driver}">
+            <input type="checkbox" id="driver" name="Driver" value="driver" th:field="*{driver}">
             <label for="Driver">Driver</label><br><br>
-            <input type="radio" id="employer" name="Employer" value="employer" th:field="*{employer}">
+            <input type="checkbox" id="employer" name="Employer" value="employer" th:field="*{employer}">
             <label for="Employer">Employer</label><br>
             <br>
             <button id="submit" type="submit" value="Submit" th:text="Submit"></button>

@@ -22,36 +22,38 @@ public class UserController {
 
 
 
-    @GetMapping("/users")
+    @GetMapping("/accountCreation")
     public String getAllUsers(Model model) {
         userService.findAllUsers();
-        model.addAttribute("users",userService.findAllUsers());
-        model.addAttribute("newUser", new UserDto());
-        return "users";
+        clearModel(model);
+        return "/accountCreation";
     }
 
 
-    @PostMapping("/users")
+    @PostMapping("/accountCreation")
     public String createNewUser(@ModelAttribute UserDto newUser, Model model)  {
         userService.createUser(newUser);
-        model.addAttribute("users", userService.findAllUsers());
-        model.addAttribute("newUser", new UserDto());
-        return "users";
+        clearModel(model);
+        return "/accountCreation";
     }
 
-    @GetMapping("/users/delete/{id}")
+    @GetMapping("/accountCreation/delete/{id}")
     public String deleteUser(@PathVariable long id, Model model) {
         userService.deleteUsersById(id);
-        model.addAttribute("dogs", userService.findAllUsers());
-        model.addAttribute("newUser", new UserDto());
-        return "users";
+        clearModel(model);
+        return "/accountCreation";
     }
 
-    @PostMapping("/users/{id}")
+    @PostMapping("/accountCreation/{id}")
     public String updateUser(@ModelAttribute UserDto updatedUser, Model model) {
         userService.updateUser(updatedUser);
+        clearModel(model);
+        return "/accountCreation";
+    }
+
+    private void clearModel(Model model) {
         model.addAttribute("dogs", userService.findAllUsers());
         model.addAttribute("newUser", new UserDto());
-        return "users";
+        model.addAttribute("updatedUser", new UserDto());
     }
 }
