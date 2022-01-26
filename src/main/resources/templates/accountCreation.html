@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <link rel='Stylesheet' href='../../../../../Java-capstone/public/style.css'>
+</head>
+<body>
+    <nav>
+    </nav>
+    <div id="accCreate">
+        <form action="#" th:action="@{/users}" th:object="${newUser}" method="post">
+            Username:  
+            <input id="userName" type="text" th:field="*{username}">
+            <br> <br>  
+            Password: 
+            <input id="passWord" type="text" th:field="*{password}">
+            <br><br>
+            <h5>Please select driver, employer, or both</h5>
+            <input type="radio" id="driver" name="Driver" value="driver" th:field="*{driver}">
+            <label for="Driver">Driver</label><br><br>
+            <input type="radio" id="employer" name="Employer" value="employer" th:field="*{employer}">
+            <label for="Employer">Employer</label><br>
+            <br>
+            <button id="submit" type="submit" value="Submit" th:text="Submit"></button>
+        </form>
+    </div>
+</body>
+</html>
