@@ -5,7 +5,6 @@ import com.truckingApp.Trucking.entities.Users;
 import com.truckingApp.Trucking.model.UserDto;
 import com.truckingApp.Trucking.repositories.UserRepository;
 import lombok.AllArgsConstructor;
-import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
