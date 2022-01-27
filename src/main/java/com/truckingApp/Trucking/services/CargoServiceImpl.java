@@ -36,6 +36,8 @@ public class CargoServiceImpl implements CargoService{
 
     @Override
     public void deleteCargoById(Long Id){
+
         cargoRepository.deleteById(Id);
+        return;
     }
 }

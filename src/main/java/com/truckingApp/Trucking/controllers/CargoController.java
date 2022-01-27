@@ -39,7 +39,7 @@ public class CargoController {
 
     }
 
-    @GetMapping("/cargo")
+    @GetMapping("/cargo/delete/{id}")
     public String deleteCargo(@PathVariable long id, Model model){
         cargoService.deleteCargoById(id);
         model.addAttribute("cargo", cargoService.findAllCargo());
