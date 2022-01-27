@@ -32,6 +32,7 @@ public class UserServiceImpl implements UserService{
         user.setPassword(userDto.getPassword());
         user.setDriver(userDto.getDriver());
         user.setEmployer(userDto.getEmployer());
+        user.setAdmin(userDto.getAdmin());
         return new UserDto (usersRepository.save(user));
     }
 
@@ -50,6 +51,7 @@ public class UserServiceImpl implements UserService{
             user.setUsername(userDto.getUsername());
             user.setPassword(userDto.getPassword());
             user.setEmployer(userDto.getEmployer());
+            user.setAdmin(userDto.getAdmin());
             return Optional.of(new UserDto(usersRepository.save(user)));
         }
         return Optional.empty();

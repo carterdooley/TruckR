@@ -52,7 +52,7 @@ public class UserController {
     }
 
     private void clearModel(Model model) {
-        model.addAttribute("dogs", userService.findAllUsers());
+        model.addAttribute("user", userService.findAllUsers());
         model.addAttribute("newUser", new UserDto());
         model.addAttribute("updatedUser", new UserDto());
     }

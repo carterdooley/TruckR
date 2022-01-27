@@ -18,5 +18,6 @@ public class Users {
     private String password;
     private Boolean employer;
     private Boolean driver;
+    private Boolean admin;
 
 }

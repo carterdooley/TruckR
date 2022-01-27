@@ -17,6 +17,7 @@
             <br> <br>  
             Password: 
             <input id="passWord" type="password" th:field="*{password}">
+
             <br><br>
             <h5>Please select driver, employer, or both</h5>
             <input type="checkbox" id="driver" name="Driver" value="driver" th:field="*{driver}">
@@ -24,8 +25,26 @@
             <input type="checkbox" id="employer" name="Employer" value="employer" th:field="*{employer}">
             <label for="Employer">Employer</label><br>
             <br>
+            <input type="password">
             <button id="submit" type="submit" value="Submit" th:text="Submit"></button>
         </form>
     </div>
 </body>
+<script>
+//Needs fix
+    let submit = document.getElementById(submit);
+    let passW = document.getElementById(passWord).value;
+
+    submit.addEventListener("click", passCheck(passW))
+
+
+
+    const passCheck = (password) => {
+        password.split()
+        if (password.length < 8) {
+            alert("Password must be 8 characters long")
+        }
+    }
+</script>
+
 </html>

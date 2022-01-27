@@ -13,6 +13,7 @@ public class UserDto {
     private String password;
     private Boolean employer;
     private Boolean driver;
+    private Boolean admin;
 
     public UserDto(Users user) {
         this.id = user.getId();
@@ -20,6 +21,8 @@ public class UserDto {
         this.password = user.getPassword();
         this.driver = user.getDriver();
         this.employer = user.getEmployer();
+        this.admin = user.getAdmin();
+
     }
 
 }
