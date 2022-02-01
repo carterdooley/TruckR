@@ -11,12 +11,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import java.util.List;
-
 
 @Controller
 @AllArgsConstructor(onConstructor = @__({@Autowired}))
-public class UserController {
+public class RegistrationController {
 
     public final UserService userService;
 
@@ -50,6 +48,7 @@ public class UserController {
         clearModel(model);
         return "/accountCreation";
     }
+
 
     private void clearModel(Model model) {
         model.addAttribute("user", userService.findAllUsers());

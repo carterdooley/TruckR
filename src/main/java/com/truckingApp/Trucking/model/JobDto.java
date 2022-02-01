@@ -8,14 +8,14 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 public class JobDto {
-    private long jobId;
+    private Long jobId;
     private String jobName;
-    private long employerId;
-    private long driverId;
+    private Long employerId;
+    private Long driverId;
     private String description;
     private String cargo;
-    private long start_location;
-    private long end_location;
+    private Long start_location;
+    private Long end_location;
 
 
 

@@ -9,8 +9,14 @@
 </head>
 <body>
     <nav>
+        <ul>
+            <li><a>Home</a></li>
+            <li><a>Create Account</a></li>
+            <li><a>Login</a></li>
+        </ul>
     </nav>
     <div id="accCreate">
+        <h1>Create Account</h1>
         <form action="#" th:action="@{/accountCreation}" th:object="${newUser}" method="post">
             Username:  
             <input id="userName" type="text" th:field="*{username}">
@@ -25,26 +31,12 @@
             <input type="checkbox" id="employer" name="Employer" value="employer" th:field="*{employer}">
             <label for="Employer">Employer</label><br>
             <br>
-            <input type="password">
             <button id="submit" type="submit" value="Submit" th:text="Submit"></button>
         </form>
     </div>
 </body>
 <script>
-//Needs fix
-    let submit = document.getElementById(submit);
-    let passW = document.getElementById(passWord).value;
 
-    submit.addEventListener("click", passCheck(passW))
-
-
-
-    const passCheck = (password) => {
-        password.split()
-        if (password.length < 8) {
-            alert("Password must be 8 characters long")
-        }
-    }
 </script>
 
 </html>

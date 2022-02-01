@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+    <link rel='Stylesheet' href='../../../../../Java-capstone/public/style.css'>
+</head>
+<body>
+    <nav>
+    </nav>
+    <div id="loginForm">
+        <h1>Login</h1>
+        <br>
+        <form action="#" th:action="@{/Login}" method="post">
+            <div th:if="@{param.error}">
+                <div class="alert alert-error">Invalid Username or Password</div>
+            </div>
+
+
+            <div th:if="${param.Logout}">
+                <div class="alert alert-logout">You have been logged out</div>
+            </div>
+
+            <div class="form">
+                <label for="username"> Username: </label>
+                <input type="text" class="login-inputs" id="username" name="username" placeholder="Enter Username" autofocus="autofocus">
+            </div>
+            <div class="form">
+                <label for="password"> Password: </label>
+                <input type="password" class="login-inputs" id="password" name="password" placeholder="Enter Password" autofocus="autofocus">
+            </div>
+            <div class="form">
+                <div class="row">
+                    <input type="submit" name="Login-Submit" id="submitButton" value="Log In">
+                </div>
+            </div>
+        </form>
+        <div class="form">
+            <span>New User?<a href="/" th:href="@{/accountCreation}">Register here
+            </a> </span>
+        </div>
+    </div>
+</body>
+</html>
