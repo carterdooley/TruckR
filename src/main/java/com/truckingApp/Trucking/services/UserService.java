@@ -1,6 +1,7 @@
 package com.truckingApp.Trucking.services;
 
 import com.truckingApp.Trucking.model.UserDto;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
 import java.util.List;
@@ -16,4 +17,5 @@ public interface UserService extends UserDetailsService {
 
     Optional<UserDto> updateUser (UserDto user);
 
+    UserDetails loadUserByUsername (String username);
 }
