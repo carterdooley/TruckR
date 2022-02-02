@@ -11,8 +11,8 @@ public class UserDto {
     private Long id;
     private String username;
     private String password;
-    private Boolean employer;
-    private Boolean driver;
+    public Boolean employer;
+    public Boolean driver;
     private Boolean admin;
 
     public UserDto(Users user) {

@@ -52,5 +52,13 @@ public class JobController {
         model.addAttribute("jobs", jobService.findAllJobs());
         model.addAttribute("newJob", new JobDto());
         model.addAttribute("updatedJob", new JobDto());
+        model.addAttribute("jobName", new JobDto());
+        model.addAttribute("description", new JobDto());
+        model.addAttribute("cargo", new JobDto());
+        model.addAttribute("start_location", new JobDto());
+        model.addAttribute("end_location", new JobDto());
     }
 }
+
+
+

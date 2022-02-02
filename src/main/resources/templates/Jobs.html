@@ -7,7 +7,13 @@
     <title>Title</title>
 </head>
 <body>
-    <nav></nav>
+    <nav>
+            <li><a>Home</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/Jobs">Jobs</a></li>
+            <li><a href=""></a></li>
+            <li><a href=""></a></li>
+    </nav>
 
     <h1>Available Jobs</h1>
 
@@ -28,6 +34,7 @@
         <p>Cargo: <input type="text" th:field="*{cargo}"></p>
         <p>Start Location: <input type="number" th:field="*{start_location}"></p>
         <p>End Location: <input type="number" th:field="*{end_location}"></p>
+        <button id="submit" type="submit" value="Submit" th:text="Submit"></button>
     </div>
 
 </body>

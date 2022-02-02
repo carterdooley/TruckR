@@ -5,15 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Account</title>
-    <link rel='Stylesheet' href='../../../../../Java-capstone/public/style.css'>
 </head>
 <body>
     <nav>
-        <ul>
             <li><a>Home</a></li>
-            <li><a>Create Account</a></li>
-            <li><a>Login</a></li>
-        </ul>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/Jobs">Jobs</a></li>
+            <li><a href=""></a></li>
+            <li><a href=""></a></li>
     </nav>
     <div id="accCreate">
         <h1>Create Account</h1>
@@ -33,6 +32,11 @@
             <br>
             <button id="submit" type="submit" value="Submit" th:text="Submit"></button>
         </form>
+    </div>
+    <div>
+        <card th:each="user : ${Users}">
+            <h5 th:text="@{user.username}"></h5>
+        </card>
     </div>
 </body>
 <script>

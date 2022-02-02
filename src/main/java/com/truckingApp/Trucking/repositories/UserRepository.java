@@ -12,6 +12,10 @@ import java.util.List;
 public interface UserRepository extends JpaRepository <Users, Long>{
 
     List<Users> findAllByEmployer(Boolean employer);
-    List<Users> findAllByDriver(Boolean driver);
+    List<Users> findByDriver(Boolean driver);
     Users findByUsername (String username);
+
+    static Users ifDriver(Boolean driver) {
+        return null;
+    }
 }

@@ -5,21 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log In</title>
-    <link rel='Stylesheet' href='../../../../../Java-capstone/public/style.css'>
+
 </head>
 <body>
     <nav>
+            <li><a>Home</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/Jobs">Jobs</a></li>
+            <li><a href=""></a></li>
+            <li><a href=""></a></li>
     </nav>
     <div id="loginForm">
         <h1>Login</h1>
         <br>
-        <form action="#" th:action="@{/Login}" method="post">
-            <div th:if="@{param.error}">
+        <form th:action="@{/login}" method="post">
+            <div th:if="${param.error}">
                 <div class="alert alert-error">Invalid Username or Password</div>
             </div>
 
 
-            <div th:if="${param.Logout}">
+            <div th:if="${param.logout}">
                 <div class="alert alert-logout">You have been logged out</div>
             </div>
 
@@ -29,11 +34,11 @@
             </div>
             <div class="form">
                 <label for="password"> Password: </label>
-                <input type="password" class="login-inputs" id="password" name="password" placeholder="Enter Password" autofocus="autofocus">
+                <input  type="password" class="login-inputs" id="password" name="password" placeholder="Enter Password" autofocus="autofocus">
             </div>
             <div class="form">
                 <div class="row">
-                    <input type="submit" name="Login-Submit" id="submitButton" value="Log In">
+                    <input type="submit" name="Login-Submit" id="Login-Submit" value="Log In" class="form-control btn btn-primary">
                 </div>
             </div>
         </form>
