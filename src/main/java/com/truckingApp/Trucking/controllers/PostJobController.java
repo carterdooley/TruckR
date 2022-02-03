@@ -2,7 +2,6 @@ package com.truckingApp.Trucking.controllers;
 
 
 import com.truckingApp.Trucking.model.JobDto;
-import com.truckingApp.Trucking.model.UserDto;
 import com.truckingApp.Trucking.services.JobService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,43 +14,46 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 @AllArgsConstructor(onConstructor = @__({@Autowired}))
-public class JobController {
+public class PostJobController {
 
 
-    public final JobService jobService;
+    public final JobService jobservice;
 
-    @GetMapping("/ViewJobs")
-    public String findAllJobs(Model model) {
-        String page;
-        jobService.findAllJobs();
+
+
+    @GetMapping("/Jobs")
+    public String postJobPage(Model model) {
+        jobservice.findAllJobs();
         clearModelJ(model);
-        return "ViewJobs";
+        return "Jobs";
     }
 
-
-    @PostMapping("/ViewJobs/")
+    @PostMapping("/Jobs")
     public String createNewJob(@ModelAttribute JobDto newJob, Model model)  {
-        jobService.createNewJob(newJob);
+        jobservice.createNewJob(newJob);
         clearModelJ(model);
-        return "ViewJobs";
+        return "Jobs";
     }
 
-    @GetMapping("/ViewJobs/delete/{id}")
-    public String deleteJobById(@PathVariable long id, Model model) {
-        jobService.deleteJobsById(id);
-        clearModelJ(model);
-        return "ViewJobs";
-    }
 
-    @PostMapping("/ViewJobs/{id}")
+    @PostMapping("/Jobs/{id}")
     public String updateJob(@ModelAttribute JobDto updatedJob, Model model) {
-        jobService.updateJob(updatedJob);
+        jobservice.updateJob(updatedJob);
         clearModelJ(model);
-        return "ViewJobs";
+        return "Jobs";
+    }
+
+
+
+    @GetMapping("/Jobs/delete/{id}")
+    public String deleteJobById(@PathVariable long id, Model model) {
+        jobservice.deleteJobsById(id);
+        clearModelJ(model);
+        return "Jobs";
     }
 
     private void clearModelJ(Model model) {
-        model.addAttribute("jobs", jobService.findAllJobs());
+        model.addAttribute("jobs", jobservice.findAllJobs());
         model.addAttribute("newJob", new JobDto());
         model.addAttribute("updatedJob", new JobDto());
         model.addAttribute("jobName", new JobDto());
@@ -60,10 +62,5 @@ public class JobController {
         model.addAttribute("start_location", new JobDto());
         model.addAttribute("end_location", new JobDto());
     }
+
 }
-
-
-
-
-
-

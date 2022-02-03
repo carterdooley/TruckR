@@ -10,10 +10,21 @@
     <nav>
             <li><a>Home</a></li>
             <li><a href="/login">Login</a></li>
-            <li><a href="/Jobs">Jobs</a></li>
+            <li><a href="/ViewJobs">Jobs</a></li>
             <li><a href=""></a></li>
             <li><a href=""></a></li>
     </nav>
+    <div>
+        <div th:each="user : ${user}">
+            <div class="card-body">
+                <h5 class="job-title" th:text="${user.username}"></h5>
+                <h5 class="job-title" th:text="${user.driver}"></h5>
+                <h5 class="job-title" th:text="${user.employer}"></h5>
+            </div>
+        </div>
+    </div>
+
+
     <div id="accCreate">
         <h1>Create Account</h1>
         <form action="#" th:action="@{/accountCreation}" th:object="${newUser}" method="post">
@@ -33,11 +44,7 @@
             <button id="submit" type="submit" value="Submit" th:text="Submit"></button>
         </form>
     </div>
-    <div>
-        <card th:each="user : ${Users}">
-            <h5 th:text="@{user.username}"></h5>
-        </card>
-    </div>
+
 </body>
 <script>
 

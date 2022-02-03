@@ -5,6 +5,27 @@
     <title>Title</title>
 </head>
 <body>
+    <nav>
+        <li><a>Home</a></li>
+        <li><a href="/login">Login</a></li>
+        <li><a href="/ViewJobs">Jobs</a></li>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+    </nav>
+    <nav>
+        <span><a href="/Jobs">Post A Job</a></span>
+    </nav>
+    <h3>Available Jobs</h3>
+    <div>
+        <div th:each="job : ${jobs}">
+            <div class="card-body">
+                <h5 class="job-title" th:text="${job.jobName}"></h5>
+                <h5 class="job-title" th:text="${job.employerId}"></h5>
+                <button>Add Job</button>
+            </div>
+        </div>
+    </div>
+
 
 </body>
 </html>
