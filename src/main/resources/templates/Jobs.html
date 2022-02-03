@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmls:th="http://thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:xmls="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,6 +14,12 @@
             <li><a href="/ViewJobs">Jobs</a></li>
             <li><a href=""></a></li>
             <li><a href=""></a></li>
+
+        <div>
+            <ul>
+                <li sec:authorize="isAuthenticated()"><a th:href="@{/logout}">Logout</a></li>
+            </ul>
+        </div>
     </nav>
 
     <h1>Available Jobs</h1>
@@ -23,7 +30,7 @@
         <p>Job Name: <input type="text" th:field="*{jobName}"></p>
         <p>Description: <input type="text" th:field="*{description}"></p>
         <p>Cargo: <input type="text" th:field="*{cargo}"></p>
-            <p>Employer Id<input type="number" th:field="*{employerId}"></p>
+            <p>Employer Email<input type="text" th:field="*{employerEmail}"></p>
             <p>Start Location: <input type="number" th:field="*{start_location}"></p>
         <p>End Location: <input type="number" th:field="*{end_location}"></p>
         <button id="submit" type="submit" value="Submit" th:text="Submit"></button>

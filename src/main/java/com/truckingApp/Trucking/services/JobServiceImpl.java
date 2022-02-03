@@ -6,7 +6,6 @@ import com.truckingApp.Trucking.model.JobDto;
 import com.truckingApp.Trucking.repositories.JobRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -31,8 +30,7 @@ public class JobServiceImpl implements JobService {
     public JobDto createNewJob(JobDto jobDto) {
         Jobs job= new Jobs();
         job.setJobName(jobDto.getJobName());
-        job.setEmployerId(jobDto.getEmployerId());
-        job.setDriverId(jobDto.getDriverId());
+        job.setEmployerEmail(jobDto.getEmployerEmail());
         job.setDescription(jobDto.getDescription());
         job.setCargo(jobDto.getCargo());
         job.setStart_location(jobDto.getStart_location());
@@ -51,8 +49,7 @@ public class JobServiceImpl implements JobService {
         if(jobOptional.isPresent()){
             Jobs job = jobOptional.get();
             job.setJobName(jobDto.getJobName());
-            job.setEmployerId(jobDto.getEmployerId());
-            job.setDriverId(jobDto.getDriverId());
+            job.setEmployerEmail(jobDto.getEmployerEmail());
             job.setDescription(jobDto.getDescription());
             job.setCargo(jobDto.getCargo());
             job.setStart_location(jobDto.getStart_location());

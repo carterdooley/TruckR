@@ -3,7 +3,6 @@ package com.truckingApp.Trucking.services;
 
 import com.truckingApp.Trucking.entities.Cargo;
 import com.truckingApp.Trucking.model.CargoDto;
-import com.truckingApp.Trucking.model.UserDto;
 import com.truckingApp.Trucking.repositories.CargoRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;

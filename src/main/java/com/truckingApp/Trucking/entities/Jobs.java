@@ -18,8 +18,7 @@ public class Jobs {
     @GeneratedValue
     private Long jobId;
     private String jobName;
-    private Long employerId;
-    private Long driverId;
+    private String employerEmail;
     private String description;
     private String cargo;
     private Long start_location;

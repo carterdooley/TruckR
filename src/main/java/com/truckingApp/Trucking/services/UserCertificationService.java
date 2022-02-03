@@ -1,6 +1,5 @@
 package com.truckingApp.Trucking.services;
 
-import com.truckingApp.Trucking.entities.UserCertification;
 import com.truckingApp.Trucking.model.UserCertificationDto;
 
 import java.util.List;

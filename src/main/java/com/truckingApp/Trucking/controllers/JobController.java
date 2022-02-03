@@ -2,7 +2,6 @@ package com.truckingApp.Trucking.controllers;
 
 
 import com.truckingApp.Trucking.model.JobDto;
-import com.truckingApp.Trucking.model.UserDto;
 import com.truckingApp.Trucking.services.JobService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;

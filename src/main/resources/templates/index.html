@@ -4,14 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        
+    </style>
 </head>
 <body>
     <nav>
-        <li><a>Home</a></li>
-        <li><a href="/login">Login</a></li>
-        <li><a href="/ViewJobs">Jobs</a></li>
-        <li><a href=""></a></li>
-        <li><a href=""></a></li>
+        <ul>
+            <li><a>Home</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/ViewJobs">Jobs</a></li>
+            <li><a href=""></a></li>
+            <li><a href=""></a></li>
+        </ul>
+        <div>
+            <ul>
+                <li sec:authorize="isAuthenticated()"><a th:href="@{/logout}">Logout</a></li>
+            </ul>
+        </div>
     </nav>
 
 

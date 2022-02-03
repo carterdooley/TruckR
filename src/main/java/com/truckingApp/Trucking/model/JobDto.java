@@ -10,8 +10,7 @@ import lombok.NoArgsConstructor;
 public class JobDto {
     private Long jobId;
     private String jobName;
-    private Long employerId;
-    private Long driverId;
+    private String employerEmail;
     private String description;
     private String cargo;
     private Long start_location;
@@ -22,8 +21,7 @@ public class JobDto {
     public JobDto(Jobs job) {
         this.jobId = job.getJobId();
         this.jobName = job.getJobName();
-        this.employerId = job.getEmployerId();
-        this.driverId = job.getDriverId();
+        this.employerEmail = job.getEmployerEmail();
         this.description = job.getDescription();
         this.cargo = job.getCargo();
         this.start_location = job.getStart_location();

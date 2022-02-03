@@ -5,15 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log In</title>
+    <style>
+        .crumb {
+            background-color: rgba(255,24,1,0.48);
+            margin-right: 2em;
+            display: inline;
+            font-size: xx-large;
+        }
+        #loginForm {
+            text-align: center;
+            background-color:#98c1d9 ;
+            width: 40%;
+            margin-right: 10px;
+            flex: 1;
+        }
+        body {
+            background-image: url("https://media.gettyimages.com/photos/semi-truck-18-wheeler-on-the-highway-at-sunset-picture-id1186820884?k=20&m=1186820884&s=612x612&w=0&h=frLvigz4OwXX5Wr79wWXeeFv03922y4FBSq168app9U=");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        nav {
+            background-color: rgba(255,24,1,0.48);
+            height: 100px;
+            text-align:center;
+            margin: 10px 0 0 0;
+        }
+
+    </style>
 
 </head>
 <body>
     <nav>
-            <li><a>Home</a></li>
-            <li><a href="/login">Login</a></li>
-            <li><a href="/ViewJobs">View Jobs</a></li>
-            <li><a href=""></a></li>
-            <li><a href=""></a></li>
+            <li class="crumb"><a href="/">Home</a></li>
+            <li class="crumb"><a href="/login">Login</a></li>
+            <li class="crumb"><a href="/ViewJobs">View Jobs</a></li>
     </nav>
     <div id="loginForm">
         <h1>Login</h1>

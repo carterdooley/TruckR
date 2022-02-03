@@ -1,16 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmls:th="http://thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:xmls="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Job Listing</title>
+    <style>
+
+    </style>
 </head>
 <body>
     <nav>
         <li><a>Home</a></li>
         <li><a href="/login">Login</a></li>
         <li><a href="/ViewJobs">Jobs</a></li>
-        <li><a href=""></a></li>
-        <li><a href=""></a></li>
+
+
+        <div>
+            <ul>
+                <li sec:authorize="isAuthenticated()"><a th:href="@{/logout}">Logout</a></li>
+            </ul>
+        </div>
     </nav>
     <nav>
         <span><a href="/Jobs">Post A Job</a></span>
@@ -20,8 +29,11 @@
         <div th:each="job : ${jobs}">
             <div class="card-body">
                 <h5 class="job-title" th:text="${job.jobName}"></h5>
-                <h5 class="job-title" th:text="${job.employerId}"></h5>
-                <button>Add Job</button>
+                <h5 class="job-title" th:text="${job.employerEmail}"><a></a></h5>
+                <h5 class="job-title" th:text="${job.description}"></h5>
+                <h5 class="job-title" th:text="${job.cargo}"></h5>
+                <h5 class="job-title" th:text="${job.start_location}"></h5>
+                <h5 class="job-title" th:text="${job.end_location}"></h5>
             </div>
         </div>
     </div>

@@ -1,28 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Account</title>
+    <style>
+        body {
+            background-image: url("https://media.gettyimages.com/photos/long-haul-semi-truck-on-a-rural-western-usa-interstate-highway-picture-id1156528620?k=20&m=1156528620&s=612x612&w=0&h=0omNL3F_GRFqR62yxLDrfpBq7tuNPUhNw6YFbLuxuoQ=");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        nav {
+            background-color: rgba(255,24,1,0.48);
+            height: 100px;
+            text-align:center;
+            margin: 10px 0 0 0;
+        }
+        #accCreate {
+            position: center;
+        }
+        .crumb {
+            margin-right: 2em;
+            display: inline;
+            font-size: xx-large;
+        }
+    </style>
 </head>
 <body>
     <nav>
-            <li><a>Home</a></li>
-            <li><a href="/login">Login</a></li>
-            <li><a href="/ViewJobs">Jobs</a></li>
-            <li><a href=""></a></li>
-            <li><a href=""></a></li>
+            <li class="crumb"><a>Home</a></li>
+            <li class="crumb"><a href="/login">Login</a></li>
+            <li class="crumb"><a href="/ViewJobs">Jobs</a></li>
+            <li class="crumb"><a href=""></a></li>
+            <li class="crumb"><a href=""></a></li>
     </nav>
-    <div>
-        <div th:each="user : ${user}">
-            <div class="card-body">
-                <h5 class="job-title" th:text="${user.username}"></h5>
-                <h5 class="job-title" th:text="${user.driver}"></h5>
-                <h5 class="job-title" th:text="${user.employer}"></h5>
-            </div>
-        </div>
-    </div>
 
 
     <div id="accCreate">
