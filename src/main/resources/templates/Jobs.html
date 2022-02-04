@@ -18,9 +18,15 @@
             display: inline;
             font-size: xx-large;
         }
+        #post-form {
+
+        }
     </style>
 </head>
 <body>
+    <div>
+        <img src="C:\Users\modzz\IdeaProjects\TruckR\Logo.jpg">
+    </div>
     <nav>
             <li class="crumb"><a>Home</a></li>
             <li class="crumb"><a href="/ViewJobs">Jobs</a></li>
@@ -37,7 +43,7 @@
 
     <div>
         <h2>Post a Job</h2>
-        <form action="#" th:action="@{/Jobs}" th:object="${newJob}" method="post">
+        <form action="#" th:action="@{/Jobs}" th:object="${newJob}" method="post" class="post-form">
         <p>Job Name: <input type="text" th:field="*{jobName}"></p>
         <p>Description: <input type="text" th:field="*{description}"></p>
         <p>Cargo: <input type="text" th:field="*{cargo}"></p>
