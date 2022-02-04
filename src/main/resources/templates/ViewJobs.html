@@ -5,19 +5,30 @@
     <meta charset="UTF-8">
     <title>Job Listing</title>
     <style>
+        nav {
+            background-color: rgba(255,24,1,0.48);
+            height: 100px;
+            text-align:center;
+            margin: 10px 0 0 0;
+        }
+        .crumb {
+            margin-right: 2em;
+            display: inline;
+            font-size: xx-large;
+        }
 
     </style>
 </head>
 <body>
     <nav>
-        <li><a>Home</a></li>
-        <li><a href="/login">Login</a></li>
-        <li><a href="/ViewJobs">Jobs</a></li>
+        <li class="crumb"><a>Home</a></li>
+        <li class="crumb"><a href="/ViewJobs">Jobs</a></li>
+        <li class="crumb"><a href="/Jobs">Post Job</a></li>
 
 
         <div>
             <ul>
-                <li sec:authorize="isAuthenticated()"><a th:href="@{/logout}">Logout</a></li>
+                <li class="crumb" sec:authorize="isAuthenticated()"><a th:href="@{/logout}">Logout</a></li>
             </ul>
         </div>
     </nav>
