@@ -6,7 +6,7 @@
     <title>Title</title>
     <style>
         nav {
-            background-color: rgba(255,24,1,0.48);
+            background-color: firebrick ;
             height: 100px;
             text-align:center;
             margin: 10px 0 0 0;
@@ -16,28 +16,48 @@
             display: inline;
             font-size: xx-large;
         }
+        .container{
+            display: flex;
+        }
+        #aboutTitle {
+            text-align: center;
+        }
+        .about {
+            text-align: center;
+            background-color: firebrick ;
+            width: 40%;
+            margin-right: 10px;
+            flex: 1;
+        }
+        #welcome {
+            font-size: xxx-large;
+        }
+        body {
+            background-image: url("https://media.istockphoto.com/photos/winter-trucking-picture-id1201265321?k=20&m=1201265321&s=612x612&w=0&h=cej8Oq9t6Z6dd1eR71lE20GcjzNGdHgeTlCYelC6IPk=");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
 
     </style>
 </head>
 <body>
-    <div>
-        <img src="C:\Users\modzz\IdeaProjects\TruckR\Logo.jpg">
-    </div>
     <nav>
-        <ul>
             <li class="crumb"><a href="/">Home</a></li>
             <li class="crumb"><a href="/ViewJobs">Jobs</a></li>
-        </ul>
-        <div>
-            <ul>
-                <li class="crumb" sec:authorize="isAuthenticated()"><a th:href="@{/logout}">Logout</a></li>
-            </ul>
-        </div>
+            <li class="crumb" sec:authorize="isAuthenticated()"><a th:href="@{/logout}">Logout</a></li>
     </nav>
 
 
     <div>
-        <h1>Welcome to TruckR, <span sec:authentication="principal.username"></span>! </h1>
+        <h1 id="welcome">Welcome to TruckR, <span sec:authentication="principal.username"></span>! </h1>
+    </div>
+    <div class="container">
+        <div class="about">
+            <h2 id="aboutTitle">About Us</h2>
+            <p id="aboutP">TruckR is an application for contract truck drivers. With noticable supply shortages, this application's purpose is to target
+            the truckers who have given up their jobs for unfair pay. Companies are struggling to get cargo across the country with the shortage of truck drivers, but with
+            contract driving: drivers have the ability to choose the journey they want, with the pay they deserve.</p>
+        </div>
     </div>
 
 </body>

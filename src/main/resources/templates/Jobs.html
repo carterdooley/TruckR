@@ -8,7 +8,7 @@
     <title>Post Job</title>
     <style>
         nav {
-            background-color: rgba(255,24,1,0.48);
+            background-color: firebrick ;
             height: 100px;
             text-align:center;
             margin: 10px 0 0 0;
@@ -18,25 +18,18 @@
             display: inline;
             font-size: xx-large;
         }
-        #post-form {
-
+        body {
+            background-image: url("https://media.istockphoto.com/photos/blue-and-white-semitruck-speeding-on-a-single-lane-road-usa-picture-id1286945199?k=20&m=1286945199&s=612x612&w=0&h=10wZXcb3undd1h3vsk0QRWJCS9Pt410FNr8D6MlOfd0=");
+            background-repeat: no-repeat;
+            background-size: cover;
         }
     </style>
 </head>
 <body>
-    <div>
-        <img src="C:\Users\modzz\IdeaProjects\TruckR\Logo.jpg">
-    </div>
     <nav>
-            <li class="crumb"><a>Home</a></li>
+            <li class="crumb"><a href="/">Home</a></li>
             <li class="crumb"><a href="/ViewJobs">Jobs</a></li>
-
-
-        <div>
-            <ul>
-                <li sec:authorize="isAuthenticated()"><a th:href="@{/logout}">Logout</a></li>
-            </ul>
-        </div>
+            <li class="crumb" sec:authorize="isAuthenticated()"><a th:href="@{/logout}">Logout</a></li>
     </nav>
 
     <h1>Available Jobs</h1>
